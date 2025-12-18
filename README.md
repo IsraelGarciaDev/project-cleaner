@@ -29,7 +29,13 @@ This script was created as a simple way to:
 No external dependencies are required.
 
 ## Usage
+Open your terminal and do the following:
+> It is recommended to add the file to your project
 
+(You can drag and drop the folder on the console and route will be automatically added)
+```bash
+cd C:\path\to\your\project
+```
 ```bash
 python cleaner.py C:\path\to\your\project
 ```
