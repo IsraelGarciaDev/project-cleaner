@@ -49,11 +49,11 @@ def format_size(size_bytes: int ) -> str:
 
 def main():
     parser = argparse.ArgumentParser(
-        description = "Analyze a project directory and detect unnecesary folders:"
+        description="Analyze a project directory and detect unnecessary folders."
     )
     parser.add_argument(
         "path",
-        help = "Path to the project directory"
+        help="Path to the project directory"
     )
 
     args = parser.parse_args()
@@ -75,14 +75,21 @@ def main():
         print("✅ No junk folders found.")
         return
 
+    # Sort folders by size (descending)
+    junk_folders.sort(key=lambda item: item[1], reverse=True)
+
+    print("Found junk folders:\n")
+
     total_size = 0
 
     for folder, size in junk_folders:
-        print(f"{folder.name:<15} -> {format_size(size)}")
+        relative_path = folder.relative_to(project_path)
+        print(f"{str(relative_path):<40} → {format_size(size)}")
         total_size += size
 
-    print("-" * 30)
+    print("-" * 100)
     print(f"Total space used: {format_size(total_size)}")
+
 
 if __name__ == "__main__":
     main()
