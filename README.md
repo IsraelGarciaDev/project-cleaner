@@ -34,6 +34,7 @@ python --version
 ---
 
 ## Usage 
+Note: If the project folder does not have any supported junk folders, it will automaticly close
 ### Exe
 Run the executable and instructions will be shown on a terminal
 
